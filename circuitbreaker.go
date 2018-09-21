@@ -38,7 +38,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/cenk/backoff"
+	"github.com/cenkalti/backoff"
 	"github.com/facebookgo/clock"
 )
 
@@ -81,9 +81,8 @@ var (
 
 // Error codes returned by Call
 var (
-	ErrBreakerOpen            = errors.New("breaker open")
-	ErrBreakerTimeout         = errors.New("breaker time out")
-	ErrBreakerNoErrorRecorded = errors.New("no error in breaker history")
+	ErrBreakerOpen    = errors.New("breaker open")
+	ErrBreakerTimeout = errors.New("breaker time out")
 )
 
 // TripFunc is a function called by a Breaker's Fail() function and determines whether
@@ -323,7 +322,7 @@ func (cb *Breaker) LastError() error {
 	defer cb.errorsBufferLock.Unlock()
 
 	if cb.errorsBuffer.Value == nil {
-		return ErrBreakerNoErrorRecorded
+		return nil
 	}
 	return cb.errorsBuffer.Value.(error)
 }

@@ -9,7 +9,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/cenk/backoff"
+	"github.com/cenkalti/backoff"
 	"github.com/facebookgo/clock"
 )
 
