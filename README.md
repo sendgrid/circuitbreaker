@@ -28,7 +28,7 @@ You can read more about this pattern and how it's used at:
 
 ## Examples
 
-Here is a quick example of what circuitbreaker provides
+Here is a quick example of what circuitbreaker provides:
 
 ```go
 // Creates a circuit breaker that will trip if the function fails 10 times
